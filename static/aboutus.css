@@ -1,0 +1,105 @@
+body {
+  background-image: url("background3.png");
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: 100%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.cont {
+  margin: 0 4rem;
+}
+
+.logoMini {
+  display: flex;
+  align-items: center;
+  margin: 3.5rem 0 1rem 0;
+}
+
+.subsection {
+  width: 40vw;
+  display: block;
+  margin: auto;
+  margin-top: 2.5rem;
+  justify-content: center;
+  align-content: center;
+}
+
+.aboutPara {
+  font-size: large;
+  letter-spacing: 0.5px;
+  font-family: "DM Sans", "sans";
+}
+
+.subHeading {
+  font-family: "DM Serif Display", serif;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ff7a00;
+  width: fit-content;
+}
+
+.member {
+  font-family: DM Sans;
+  position: relative;
+  font-weight: bold;
+  font-size: larger;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+
+.member2 {
+  font-family: DM Sans;
+  position: relative;
+  font-weight: bold;
+  font-size: larger;
+  letter-spacing: 0.02em;
+  color: #212121;
+}
+
+.member::before {
+  content: "Grade 12th";
+  left: -0.1rem;
+  top: 1.5rem;
+  position: absolute;
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: normal;
+  font-size: medium;
+  letter-spacing: 0.02em;
+}
+
+.member2::before {
+  content: "BSc CS";
+  left: -0.1rem;
+  top: 1.5rem;
+  position: absolute;
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: normal;
+  font-size: medium;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background: white;
+  }
+
+  .logoMini {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cont {
+    padding: 1rem;
+    margin: 0 2rem;
+  }
+}

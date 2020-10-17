@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Disease Detection</title>
+    <link rel="stylesheet" href="FullPage.css" />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- GOOGLE ROBOTO & DM SERIF FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Reem+Kufi&family=DM+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="heart-disease-script.js"></script>
+
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="cont">
+      <a href="Home.html">
+        <div class="logoMini">
+          <div>
+            <img
+              src="LogoMini.png"
+              alt=""
+              style="width: 1.5rem"
+            />&nbsp;&nbsp;&nbsp;
+          </div>
+          <div>
+            <img
+              src="LogoTitleMini.png"
+              alt=""
+              style="width: 11rem; margin-top: 7px"
+            />
+          </div>
+        </div>
+      </a>
+
+      <div
+        style="
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          margin-top: 5rem;
+          width: fit-content;
+        "
+      >
+      <a
+      href="https://github.com/KushGabani/Project-Ether/keras-models/Heart-Disease-Prediction.ipynb"
+    ><img
+          src="GitHub-Mark-64px 3.png"
+          alt="GitHub-Mark-64px 3.png"
+          style="height: 1.4rem; width: 1.4rem"
+        />&nbsp;&nbsp;
+    </a>
+        <a
+          href="https://www.kaggle.com/ronitf/heart-disease-uci"
+          style="color: #212121; text-decoration: none"
+          target="_blank"
+          ><span
+            style="
+              font-size: 1.5rem;
+              font-family: 'Reem Kufi', sans;
+              margin: 0 15px;
+              padding-top: 5px;
+            "
+            >kaggle</span
+          >
+        </a>
+      </div>
+
+      <h2
+        style="
+          font-family: 'DM Serif Display', serif;
+          margin-top: 0.5rem;
+          width: fit-content;
+        "
+      >
+        Heart Disease Diagnosis with Simple Information
+      </h2>
+
+      <p
+        style="
+          font-size: large;
+          letter-spacing: 0.5px;
+          margin: 1.5rem 0;
+          font-family: 'DM Sans', 'sans';
+        "
+      >
+        Heart disease describes a range of conditions that affect your heart.
+        <br />
+        This can be caused by many factors. But using some information from day
+        to day
+        <br />
+        life, it can be effective know or just get a heads-up for an appointment
+        with a project, <br />
+        doctor. Here in this project, We predict this using simple
+        <br />
+        <span style="color: #ff9000">Information</span>.
+      </p>
+
+      <div style="height: 0px; overflow: hidden">
+        <input
+          type="file"
+          accept="image/*"
+          multiple="false"
+          id="image-selector"
+        />
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          width: fit-content;
+        "
+      >
+        <br />
+      </div>
+
+        <div class="container ml-0 p-0" id = "form">
+          <div class="row ml-0">
+            <div class="col-md-9 p-0">
+              <div class="card ml-0">
+                <div class="card-body">
+                  <form method="post">
+                    <div class="row">
+                      <div class="col text-center">
+                        <h4>General Data Gathering</h4>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <hr />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label><b>Age</b></label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Your Age"
+                          name="age"
+                          id="age"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label><b>Sex</b></label
+                        ><br />
+                        <div style="padding-top: 0.5rem">
+                          <input type="radio" name="sex" value="1" />
+                          Male &nbsp;&nbsp;&nbsp;
+                          <input type="radio" name="sex" value="0" />
+                          Female &nbsp;&nbsp;&nbsp;
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label><b>Chest Pain Type</b></label>
+                        <select
+                          name="cp"
+                          id="cp"
+                          style="
+                            height: 2.4rem;
+                            border-color: #e2e4e8;
+                            width: 100%;
+                            border-radius: 2px;
+                          "
+                        >
+                          <option selected disabled>
+                            ------------- SELECT OPTION -------------
+                          </option>
+                          <option value="0">
+                            Chest pain; low blood supply to the heart
+                          </option>
+                          <option value="1">
+                            Chest pain; not related to heart
+                          </option>
+                          <option value="2">
+                            Typically esophageal spasms (non heart related)
+                          </option>
+                          <option value="3">
+                            chest pain not showing signs of disease
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label><b>Resting Blood Pressure</b></label>
+                          <input
+                            type="text"
+                            placeholder="Blood Pressure (in mm Hg)"
+                            class="form-control"
+                            name="trestbps"
+                            id="trestbps"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label><b>Cholesterol</b></label
+                          ><br />
+                          <input
+                            type="text"
+                            placeholder="Serum Cholesterol in mg/dl"
+                            class="form-control"
+                            name="chol"
+                            id = "chol"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label
+                            ><b>Fasting Blood Pressure > 120 mg/dl</b></label
+                          ><br />
+                          <div style="padding-top: 0.5rem">
+                            <input type="radio" name="fbs" value="1" /> Yes
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="fbs" value="0" /> No
+                            &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label
+                            ><b>Resting Electrocardiographic Results</b></label
+                          >
+                          <br />
+                          <select
+                            name="restecg"
+                            id = "restecg"
+                            style="
+                              height: 2.4rem;
+                              border-color: #e2e4e8;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          >
+                            <option selected disabled>
+                              ------------- SELECT OPTION -------------
+                            </option>
+                            <option value="0">Nothing to Note</option>
+                            <option value="1">Mild Wave Abnormality</option>
+                            <option value="2">
+                              Possible or definite left ventricular hypertrophy
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label><b>Maximum Heart Rate Achieved</b></label>
+                          <br />
+                          <input
+                            type="text"
+                            placeholder="Max. Heart Rate"
+                            class="form-control"
+                            name="thalach"
+                            id="thalach"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label
+                            ><b>Experiencing Exercise induced Angina</b></label
+                          >
+                          <br />
+                          <div style="padding-top: 0.5rem">
+                            <input type="radio" name="exang" value="1" /> Yes
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="exang" value="0" /> No
+                            &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label
+                            ><b
+                              >ST Depression during exercise relative to rest</b
+                            ></label
+                          >
+                          <br />
+                          <div id="oldpeakRate">
+                            0
+                            <script>
+                              function updateSliderVal(val) {
+                                document.getElementById("oldpeak").value = val;
+                                document.getElementById(
+                                  "oldpeakRate"
+                                ).innerHTML = val;
+                              }
+                            </script>
+                          </div>
+                          <input
+                            type="range"
+                            class="custom-range"
+                            min="0"
+                            max="5"
+                            step="0.1"
+                            id="oldpeak"
+                            name="oldpeak"
+                            onchange="updateSliderVal(this.value)"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label
+                            ><b
+                              >Slope of the peak during exercise ST segment</b
+                            ></label
+                          >
+                          <br />
+                          <select
+                            name="slope"
+                            id="slope"
+                            style="
+                              height: 2.4rem;
+                              border-color: #e2e4e8;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          >
+                            <option selected disabled>
+                              ------------- SELECT OPTION -------------
+                            </option>
+                            <option value="0">Upsloping</option>
+                            <option value="1">Flatsloping</option>
+                            <option value="2">Downsloping</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label
+                            ><b
+                              >Number of Major Vessels Colored by Flourosopy</b
+                            ></label
+                          >
+                          <br />
+                          <select
+                            name="ca"
+                            id="ca"
+                            style="
+                              height: 2.4rem;
+                              border-color: #e2e4e8;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          >
+                            <option selected disabled>
+                              ------------- SELECT OPTION -------------
+                            </option>
+                            <option value="0">Level 0</option>
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label><b>Thalium Stress Results</b></label>
+                          <br />
+                          <select
+                            id="thal"
+                            name = "thal"
+                            style="
+                              height: 2.4rem;
+                              border-color: #e2e4e8;
+                              width: 100%;
+                              border-radius: 2px;
+                            "
+                          >
+                            <option value="1">1 - Normal</option>
+                            <option value="2">2 - Normal</option>
+                            <option value="3">3 - Normal</option>
+                            <option value="6">
+                              6 - Fixed Defect : Used to be a defect but okay
+                              now
+                            </option>
+                            <option value="7">
+                              7 - No proper blood movement when exercising
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                      <div class="col">
+                        <div
+                          class="form-group"
+                          style="
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                          "
+                        >
+                          <div
+                            class="btn-block btn btn-lg"
+                            id="predict"
+                            onclick="handleForm()"
+                          >
+                            Predict
+                          </div>
+                          <div class="spinner-border text-dark" style = "margin-left: 1rem; display: none;" id = "spinner">
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="results" style = "display: none;">
+          <h2
+            style="
+              margin: 2rem 0 0.5rem 0;
+              font-family: 'DM Serif Display', serif;
+            "
+          >
+            Diagnosis Result
+          </h2>
+  
+          <hr
+            class="mt-1 mb-3"
+            style="background-color: #ff9000; width: 25vw; float: left"
+          />
+          <br />
+  
+          <div class="resultHighCat"></div>
+        </div>
+    </div>
+  </body>
+</html>

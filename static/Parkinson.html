@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parkinson Disease Diagnosis</title>
+    <link rel="stylesheet" href="FullPage.css" />
+    <!-- Bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- GOOGLE ROBOTO & DM SERIF FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Reem+Kufi&family=DM+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="parkinson-script.js"></script>
+  </head>
+  <body>
+    <div class="cont">
+      <a href="Home.html">
+        <div class="logoMini">
+          <div>
+            <img
+              src="LogoMini.png"
+              alt=""
+              style="width: 1.5rem"
+            />&nbsp;&nbsp;&nbsp;
+          </div>
+          <div>
+            <img
+              src="LogoTitleMini.png"
+              alt=""
+              style="width: 11rem; margin-top: 7px"
+            />
+          </div>
+        </div>
+      </a>
+
+      <div
+        style="
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          margin-top: 5rem;
+          width: fit-content;
+        "
+      >
+      <a
+        href="https://github.com/KushGabani/Project-Ether/keras-models/Parkinson's Diagnosis.ipynb"
+      >
+      <img
+          src="GitHub-Mark-64px 3.png"
+          alt="GitHub-Mark-64px 3.png"
+          style="height: 1.4rem; width: 1.4rem"
+        />&nbsp;&nbsp;
+    </a>
+        <a
+          href="https://www.kaggle.com/kmader/parkinsons-drawings"
+          style="color: #212121; text-decoration: none"
+          target="_blank"
+          ><span
+            style="
+              font-size: 1.5rem;
+              font-family: 'Reem Kufi', sans;
+              margin: 0 15px;
+              padding-top: 5px;
+            "
+            >kaggle</span
+          >
+        </a>
+      </div>
+
+      <h2
+        style="
+          font-family: 'DM Serif Display', serif;
+          margin-top: 0.5rem;
+          width: fit-content;
+        "
+      >
+        Parkinson's Disease Diagnosis
+      </h2>
+
+      <p
+        style="
+          font-size: large;
+          letter-spacing: 0.5px;
+          margin: 1.5rem 0;
+          font-family: 'DM Sans', 'sans';
+        "
+      >
+        Parkinson's Disease is a brain disorder that leads to shaking,
+        stiffness, <br />
+        and difficult with balance and coordination. Drawing requires stability
+        of hand <br />
+        movement. If we give a patient a simple task to draw. We can get an
+        intuition that <br />
+        it could help us diagnos the disease at some level. Here in this
+        project, The test is simple <br />
+        the person has to draw any of the two things, a spiral or a wave. Our ML
+        model comes into play, <br />
+        by extracting features from the
+        <span style="color: #ff9000">Drawing</span>.
+      </p>
+
+      <div style="height: 0px; overflow: hidden;">
+        <input type = "file" accept = "image/*" multiple = "false" id = "image-selector" />
+      </div>
+      <div style="
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: fit-content;
+    ">
+      <button class="uploadBtn" onclick="handleClickEvent()">Upload Drawing</button>
+      <div class="spinner-border text-dark" style = "margin-left: 1rem"status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+
+      <div style = "height: 0; overflow: hidden;"><img src = "" id = "selected-image" width = "200px" height = "200px" /></div>
+
+      <div id = "results" style="display: none;">
+      <h2
+        style="margin: 2rem 0 0.5rem 0; font-family: 'DM Serif Display', serif"
+      >
+        Diagnosis Result
+      </h2>
+
+      <hr
+        class="mt-1 mb-3"
+        style="background-color: #ff9000; width: 25vw; float: left"
+      />
+      <br />
+        <table style="border-collapse: separate; border-spacing: 0.3rem">
+          <tr>
+            <td>
+              <h4 class="probabilities" id = "parkinson"></h4>
+            </td>
+            <td><span class="resultHighCat">Parkinson's Disease</span></td>
+          </tr>
+          <tr>
+            <td>
+              <h4 class="probabilities" id = "healthy"></h4>
+            </td>
+            <td>
+              <span class="resultCat">Healthy</span>
+            </td>
+          </tr>
+        </table>
+    </div>
+    </div>
+  </body>
+</html>

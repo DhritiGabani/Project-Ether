@@ -1,0 +1,84 @@
+body {
+  background-image: url("background2.png");
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: 100%;
+}
+.card1 a {
+  text-decoration: none !important;
+}
+.cont {
+  margin: 0 4rem;
+}
+
+.logoMini {
+  display: flex;
+  align-items: center;
+  margin: 3.5rem 0 1.5rem 0;
+}
+
+.probabilities {
+  font-family: "DM Serif Display";
+  padding-top: 6px;
+}
+
+.resultCat {
+  display: block;
+  font-family: "DM Sans";
+  color: #ff9000;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  font-size: larger;
+}
+
+.uploadBtn {
+  margin: 1rem 0;
+  outline: none;
+  width: 180px;
+  height: 44px;
+  padding: 8px 5px;
+  border-radius: 5px;
+  letter-spacing: 0.05em;
+  font-family: "Roboto", sans;
+  box-shadow: 10px 10px 20px rgba(255, 144, 0, 0.18);
+  border: none;
+  background: #ffa31a;
+  margin-right: 5px;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+}
+
+#predict {
+  outline: none;
+  width: 20rem;
+  height: 44px;
+  padding: 8px 5px;
+  border-radius: 5px;
+  letter-spacing: 0.05em;
+  font-family: "Roboto", sans;
+  box-shadow: 10px 10px 20px rgba(255, 144, 0, 0.18);
+  border: none;
+  background: #ffa31a;
+  margin-right: 5px;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background: white;
+  }
+
+  .logoMini {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cont {
+    padding: 1rem;
+    margin: 0 2rem;
+  }
+}

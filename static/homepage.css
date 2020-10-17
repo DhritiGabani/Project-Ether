@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6rem 0 2.5rem 0;
+}
+
+.card1 {
+  width: 65%;
+  display: block;
+  border-radius: 15px;
+  box-shadow: -15px -15px 50px 2px rgba(0, 0, 0, 0.06),
+    15px 15px 50px 2px rgba(0, 0, 0, 0.06);
+}
+
+.cardTitle {
+  font-family: "DM Serif Display", serif;
+  margin: 1.4rem 0 1rem 0.5rem;
+  font-size: large;
+  font-weight: normal;
+}
+
+.cardDescription {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: black;
+  font-size: 16;
+  margin-left: 1.3rem;
+}
+
+.card1 a {
+  color: #575555;
+  /* text-decoration: dotted; */
+}
+
+.imgBox1 {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid yellowgreen; */
+  border-radius: 15px 15px 0 0;
+  height: 135px;
+  width: 100%;
+}
+.imgBox1 img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.tryButton {
+  outline: none;
+  width: 95px;
+  height: 32px;
+  padding: 0px;
+  border-radius: 5px;
+  border: none;
+  background: #ff9000;
+  margin-right: 5px;
+  color: white;
+  font-size: small;
+}
+
+.title {
+  /* border: 2px solid red; */
+  color: black;
+  text-align: center;
+  display: flex;
+}
+
+.cardBody1 {
+  display: block;
+  background: #fff;
+  border-radius: 0 0 15px 15px;
+  /* height: auto; */
+  height: 200px;
+  margin-top: -10px;
+  padding: 0;
+  /* border: 2px solid red; */
+}
+
+.cardBody1 .title {
+  margin: 0.8rem 0 0 0.8rem;
+  font-weight: 500;
+  line-height: 0.8rem;
+}
+
+.cardBody1 p {
+  margin: 0 0.8rem;
+  font-weight: lighter;
+  color: #686868;
+  font-size: 0.9rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.card1 a {
+  text-decoration: none;
+  color: black;
+}
+
+.card1:hover {
+  transition-property: box-height, margin-top, box-shadow;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  margin-top: -20px;
+  height: 20%;
+  visibility: visible;
+  box-shadow: -25px -25px 50px 2px rgba(0, 0, 0, 0.2),
+    25px 25px 50px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card1:hover .cell {
+  transition-property: top;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+  position: absolute;
+  height: 8rem;
+  top: -4.5rem;
+  left: 1.5rem;
+}
+
+.heading {
+  font-family: "Roboto", sans-serif;
+  /* font-weight: 600; */
+  text-align: center;
+  width: 40vw;
+}
+
+.cell {
+  position: absolute;
+  height: 8rem;
+  top: -3.5rem;
+  left: 1.5rem;
+}
+
+.aboutUsUP {
+  position: absolute;
+  font-family: "DM Serif Display", serif;
+  font-size: x-large;
+  right: 1.5rem;
+  top: 0rem;
+  color: #212121;
+  border-bottom: 2px solid #ff9000;
+  margin: 1.5rem 1.5rem 0 0;
+}
+
+.footers {
+  margin-bottom: 1rem;
+  position: relative;
+  top: 82.9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 55px;
+}
+
+.aboutUsDown {
+  position: relative;
+  font-family: "DM Serif Display", serif;
+  font-size: x-large;
+  border-top: 2px solid #ff9000;
+  color: #212121;
+  padding: 1rem;
+  display: none;
+  width: 60vw;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .heading {
+    font-family: "Roboto", sans-serif;
+    /* font-weight: 600; */
+    text-align: center;
+    width: 70vw;
+  }
+
+  .cell {
+    position: absolute;
+    height: 8rem;
+    top: -3.5rem;
+    left: 0.45rem;
+  }
+
+  .aboutUsUP {
+    /* position:absolute; font-family: 'DM Serif Display', serif; font-size: x-large; bottom: 0;border-top: 2px solid #FF9000; padding: 1rem; */
+    display: none;
+  }
+
+  .aboutUsDown {
+    /* position:absolute; font-family: 'DM Serif Display', serif; font-size: x-large; bottom: 0;border-top: 2px solid #FF9000; padding: 1rem; */
+    display: block;
+  }
+}
